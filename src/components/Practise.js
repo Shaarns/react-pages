@@ -1,7 +1,6 @@
 import React from 'react';
 import { Button, Container, Grid, Paper, Typography } from '@material-ui/core';
 
-
 export default class Practise extends React.Component{
     render(){
         return(
@@ -27,19 +26,4 @@ export default class Practise extends React.Component{
     }
 }
 
-export default class Practiseset2 extends React.Component{
-    render(){
-        return(
-            <Container>
-                <Grid>
-                    <Paper>
-                        <Typography
-                            variant='h2'>
-                            Second component
-                        </Typography>
-                    </Paper>
-                </Grid>
-            </Container>
-        );
-    }
-}
+

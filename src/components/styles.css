@@ -1,0 +1,35 @@
+.App {
+  display: flex;
+  justify-content: center;
+  min-width: '800px';
+  outline:none;
+  border:none;
+}
+
+.bSWeAW{                                  /*  carousel button */
+  background:transparent !important;
+  color:black !important;
+  box-shadow:none!important;
+  font-size:25px!important;
+}
+
+.bQjoUN , .cetQhm{
+  display:none!important;
+}
+
+.hSiCVM{
+  box-shadow:none!important;
+  background: transparent!important;
+}
+
+.hSiCVM:disabled{
+  cursor: default !important;
+  box-shadow:none!important;
+  font-size:20px !important;
+  color: grey !important;
+  visibility: hidden!important;
+}
+
+.bSWeAW:hover{
+  font-size: 30px !important;;
+}
