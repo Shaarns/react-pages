@@ -26,7 +26,6 @@ const useStyles = makeStyles((theme) => ({
         flexDirection: 'row-reverse',
         justifyContent: 'right',
     },
-   
     buttonSend: {
         margin: theme.spacing(2, 2, 2, 0),
         borderRadius:'40px',
@@ -37,12 +36,12 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-export function Verification() {
+const VerificationCode = () => {
     const classes = useStyles();
 
     return (
         <Container component="main" maxWidth="sm" className={classes.container}>
-            <form className={classes.form}>
+            <form className={classes.form} method="POST">
                 <Grid item xs={12}>
                     <Typography
                         className={classes.heading}
@@ -96,3 +95,4 @@ export function Verification() {
 
     );
 }
+export default VerificationCode;
