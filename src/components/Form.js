@@ -41,7 +41,7 @@ const useStyles = makeStyles((theme) => ({
    }
 }));
 
-export function Form(){         
+const ZoomForm = () => {
 
     const [checked, setChecked] = useState(false);
     const [disabled, setDisabled] = useState(false);
@@ -49,9 +49,9 @@ export function Form(){
         setChecked(previousval => !previousval)
         setDisabled(prevValue => !prevValue)
     }
-    const classes = useStyles();    
+    const classes = useStyles();
 
-    const  submit= async() => { 
+    const  submit= async() => {
     axios({
         method: 'get',
         url: 'https://api.zoom.us/v2/users/me/meetings',
@@ -68,7 +68,7 @@ export function Form(){
         'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOm51bGwsImlzcyI6InA0dDEwU0cxU2ktMFdRMEtsMkYtbWciLCJleHAiOjE2MTc3Njk2OTksImlhdCI6MTYxNzY4MzMwNn0.WQcmKX659pRWDgCQ8lXtRFSBSEuFchbYQI8Gswcn3Iw',
         'User-Agent': 'Zoom-api-Jwt-Request',
         'content-type': 'application/json'
-      
+
         }
         }).then(function(response) {
         //handle success
@@ -79,7 +79,7 @@ export function Form(){
         console.log(response);
         });
     }
-    
+
     return(
         <Container component="main" maxWidth="sm" className={classes.container}>
             <AppBar position="static" className={classes.appbarmargin}>
@@ -91,7 +91,7 @@ export function Form(){
                     </Typography>       
                 </Toolbar>
             </AppBar>
-            <form className={classes.form}>
+            <form className={classes.form} method="POST">
             <Grid container spacing={2}>
                 <Grid item xs={12}>
                     <TextField 
@@ -263,3 +263,4 @@ export function Form(){
         </Container>
     );    
 }
+export default ZoomForm;

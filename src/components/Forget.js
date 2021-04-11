@@ -28,7 +28,6 @@ const useStyles = makeStyles((theme) => ({
     },
     buttonSend: {
         margin: theme.spacing(3, 2, 6, 0),
-        
     },
     buttonResend: { 
         margin: theme.spacing(3, 2, 6, 0),
@@ -40,7 +39,7 @@ const ForgetPassword = () => {
 
     return (
         <Container component="main" maxWidth="sm" className={classes.container}>
-            <form className={classes.form}>
+            <form className={classes.form} method="POST">
                 <Grid item xs={12}>
                     <Typography
                         color="primary"

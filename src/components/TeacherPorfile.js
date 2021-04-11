@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
   },
   heroContent: {
       backgroundImage: 'url(https://source.unsplash.com/random)',
-      backgroundSize:"1400px 1200px",
+      backgroundSize:"cover",
       backgroundRepeat:'no-repeat',
       padding: theme.spacing(15, 0, 15),
       marginBottom:theme.spacing(10),
@@ -53,21 +53,26 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
   },
   paper: {
-    padding: theme.spacing(5,2,5,2),
+    padding: theme.spacing(5,5,5,5),
     margin: 'auto',
+    borderRadius:'10px',
   },
   image: {
-    width: 168,
-    height: 228,
+    width: 120,
+    height: 150,
+    // margin:theme.spacing(2),
   },
   img: {
     margin: 'auto',
     display: 'block',
-    width: '100%',
-    maxHeight: '90%',
+    height:'100%',
+    width:'100%',
     borderRadius: "10px"
   },
-
+  typographyPadding: {
+    paddingTop:theme.spacing(2),
+    lineHeight:'20px',
+  },
 }));
 
 const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
@@ -77,11 +82,12 @@ export function TeacherProfile () {
 
   return (
       <main>
+      <CssBaseline />
         <div className={classes.heroContent}>
           <Container maxWidth="md">
           <div className={classes.root}>
             <Paper className={classes.paper}>
-              <Grid container spacing={2}>
+              <Grid container spacing={4}>
                 <Grid item>
                   <ButtonBase className={classes.image}>
                     <img className={classes.img} alt="complex" src={pexels} />
@@ -93,28 +99,63 @@ export function TeacherProfile () {
                       <Typography gutterBottom variant="h4">
                         Kumar Saini
                       </Typography>
-                      <Typography variant="body2" gutterBottom>
-                        Full resolution 1920x1080 • JPEG
+                      <Typography variant="body2" 
+                        color="primary"
+                        gutterBottom>
+                        #1 Educator in Physics · IIT JEE
                       </Typography>
-                      <Typography variant="body2" color="textSecondary">
-                        ID: 1030114
+                      <Typography variant="body1" color="textSecondary">
+                        B.Tech- IIT Delhi, 13+ years teaching exp for IIT-JEE, senior physics faculty at Bansal class kota, Etoos, Allen and Vibrant academy Kota,
                       </Typography>
+                      <hr/>
+                        <Grid item className={classes.typographyPadding}>
+                        <Typography variant="body2" gutterBottom>
+                          Educators Highlights
+                      </Typography>
+                        <Typography variant="body1" color="primary" gutterBottom>
+                          13+ years Experience
+                      </Typography>
+                        <Typography variant="body1" color="primary" gutterBottom>
+                          Lives in Jaipur Rajasthan
+                      </Typography>
+                        <Typography variant="body1" color="primary" gutterBottom>
+                          Gyanacharya Educator since 29th April, 2021
+                      </Typography>
+                        <Typography variant="body1" color="primary" gutterBottom>
+                          1,209,729 live minutes taught in last 30 days
+                      </Typography>
+                        <Typography variant="body1" color="primary" gutterBottom>
+                          Knows Hindi and English
+                      </Typography>
+                        </Grid>
                     </Grid>
                   </Grid>
                   <Grid item>
                     <Typography variant="subtitle1">$19.00</Typography>
                   </Grid>
                 </Grid>
-                <Grid item>
-                  <Typography variant="body2" style={{ cursor: 'pointer' }}>
-                    Remove
-                    </Typography>
                 </Grid>
-              </Grid>
+                <Grid container spacing={2}>
+                <Grid item>
+                  <Paper>
+                    <Typography variant="h6">
+                      helllo</Typography>
+                  </Paper>
+                </Grid>
+                </Grid>
             </Paper>
           </div>
           </Container>
         </div>
+        <Container maxWidth="md">
+          <Grid container spacing={4}>
+            <Grid item >
+              <Typography variant="h5" align="justify" gutterBottom>
+              Hello! I’m Robert Smith. Senior Web Developer specializing in front end development. Experienced with all stages of the development cycle for dynamic web projects. Well-versed in numerous programming languages including JavaScript, SQL, and C. Stng background in project management and customer relations.
+              </Typography>
+            </Grid>
+          </Grid>
+        </Container>
         <Container className={classes.cardGrid} maxWidth="md">
           {/* End hero unit */}
           <Grid container spacing={4}>

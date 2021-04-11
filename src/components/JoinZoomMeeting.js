@@ -38,15 +38,14 @@ const useStyles = makeStyles((theme) => ({
    },
 }));
 
-export function Join(){         
-    const classes = useStyles();    
-    
+const JoinZoomMeeting = () => {
+    const classes = useStyles();
     return(
         <Container component="main" maxWidth="sm" className={classes.container}>
-            <form className={classes.form}>
+            <form className={classes.form} method="POST">
             <Grid item xs={12}>
-                    <Typography 
-                        className={classes.heading}        
+                    <Typography
+                        className={classes.heading}
                         variant ="h4">
                         Join meeting
                     </Typography>
@@ -129,3 +128,4 @@ export function Join(){
 
 );        
 }
+export default JoinZoomMeeting;

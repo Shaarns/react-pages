@@ -30,20 +30,20 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-export default function Contact() {
+const Contact = () => {
     const classes = useStyles();
 
     return (
         <Container component="main" maxWidth="md">
             <CssBaseline />
             <div className={classes.paper}>
-                
                 <Grid container>
                     <Grid item md={5}>
                         <Typography component="h1" variant="h5">
                             Contact US
                 </Typography>
-                        <form className={classes.form} >
+                        <form className={classes.form} 
+                        method="POST">
                             <Grid container spacing={2}>
                                 <Grid item xs={12} sm={6}>
                                     <TextField
@@ -112,3 +112,4 @@ export default function Contact() {
         </Container>
     );
 }
+export default Contact;

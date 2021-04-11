@@ -44,7 +44,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 
-export default function Teachercarousel(){
+const TeacherCarousel = () => {
     const classes = useStyles();
     return (
         <div className={classes.box}>
@@ -305,3 +305,4 @@ export default function Teachercarousel(){
         </div>
     );
 }
+export default TeacherCarousel;

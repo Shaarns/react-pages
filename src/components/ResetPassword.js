@@ -21,19 +21,18 @@ const useStyles = makeStyles((theme) => ({
     textmargin: {
         margin: theme.spacing(2, 0, 1, 0),
     },
-   
     buttonSend: {
         margin: theme.spacing(1, 2, 2, 0),
 
     },
 }));
 
-export function ResetPass() {
+const ResetPassword = () => {
     const classes = useStyles();
 
     return (
         <Container component="main" maxWidth="sm" className={classes.container}>
-            <form className={classes.form}>
+            <form className={classes.form} method="POST">
                 <Grid item xs={12}>
                     <Typography
                         className={classes.heading}
@@ -103,3 +102,4 @@ export function ResetPass() {
 
     );
 }
+export default ResetPassword;
