@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
     heroContent: {
         alignText:'left',
         backgroundColor: theme.palette.background.paper,
-        padding: theme.spacing(18, 0, 20, 0),         
+        padding: theme.spacing(18, 0, 20, 0),
     },
     heroButtons: {
         marginTop: theme.spacing(4),
@@ -67,8 +67,8 @@ const useStyles = makeStyles((theme) => ({
     cardMedia: {
         borderRadius:'50%',
         height:'150px',
-        width:'150px',    
-        margin:theme.spacing(2,0,2,0)    
+        width:'150px',
+        margin:theme.spacing(2,0,2,0)
     },
     cardContent: {
         flexGrow: 1,
@@ -92,32 +92,32 @@ export default function About() {
                 <div className={classes.heroContent}>
                     <Container maxWidth="md" >
                         <Grid container spacing={10}>
-                            <Grid item md={6} sm={12} xs={12} 
+                            <Grid item md={6} sm={12} xs={12}
                             className={classes.container}>
-                                <Typography component="h1" variant="h2" 
-                                    align="center" 
+                                <Typography component="h1" variant="h2"
+                                    align="center"
                                     color="textPrimary" gutterBottom>
                                     About
                                 </Typography>
-                                <Typography variant="h5" 
-                                    align="center" 
+                                <Typography variant="h5"
+                                    align="center"
                                     color="textSecondary" paragraph>
-                                    Something short and leading about the 
-                                    collection below—its contents, 
+                                    Something short and leading about the
+                                    collection below—its contents,
                                     the creator, etc.
                                     Make it short and sweet, but not too short.
                                 </Typography>
                                 <div className={classes.heroButtons}>
-                                    <Grid container spacing={2} 
+                                    <Grid container spacing={2}
                                         justify="center">
                                         <Grid item>
-                                            <Button variant="contained" 
+                                            <Button variant="contained"
                                                 color="primary">
                                                 Main call to action
                                             </Button>
                                         </Grid>
                                         <Grid item>
-                                            <Button variant="outlined" 
+                                            <Button variant="outlined"
                                                 color="primary">
                                                 Secondary action
                                             </Button>
@@ -128,7 +128,7 @@ export default function About() {
                             <Grid item xs={12} sm={12} md={6}>
                                 <CardMedia
                                     className={classes.aboutimg}
-                                    image="https://res.cloudinary.com/mhmd/image/upload/v1556834136/illus_kftyh4.png" 
+                                    image="https://res.cloudinary.com/mhmd/image/upload/v1556834136/illus_kftyh4.png"
                                     title="Image title"
                                 />
                             </Grid>
@@ -144,7 +144,7 @@ export default function About() {
                             <Typography variant="subtitle1">
                                 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                             </Typography>
-                            <Button  color="primary" 
+                            <Button  color="primary"
                                 className={classes.aboutButton}>
                                 Learn More
                             </Button>
@@ -179,7 +179,7 @@ export default function About() {
                 <Container className={classes.cardGrid} maxWidth="md">
                     <Grid container spacing={10}>
                         <Grid item xs={12}>
-                           <Typography variant="h3" > 
+                           <Typography variant="h3" >
                                 Our Team
                            </Typography>
                         </Grid>

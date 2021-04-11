@@ -25,10 +25,10 @@ const useStyles = makeStyles((theme) => ({
   },
   heroContent: {
       backgroundImage: 'url(https://source.unsplash.com/random)',
-      backgroundSize:"100% 60%",
+      backgroundSize:"100% 65%",
       backgroundRepeat:'no-repeat',
-      padding: theme.spacing(15, 0, 15),
-      marginBottom:theme.spacing(2),
+      padding: theme.spacing(12, 0, 12),
+      marginBottom:theme.spacing(0),
   },
   heroButtons: {
     marginTop: theme.spacing(4),
@@ -48,10 +48,6 @@ const useStyles = makeStyles((theme) => ({
   cardContent: {
     flexGrow: 1,
   },
-  footer: {
-    backgroundColor: theme.palette.background.paper,
-    padding: theme.spacing(6),
-  },
   root: {
     flexGrow: 1,
   },
@@ -60,10 +56,12 @@ const useStyles = makeStyles((theme) => ({
     margin: 'auto',
     borderRadius:'10px',
   },
+  subpaper: {
+    padding:theme.spacing(2),
+  },
   image: {
-    width: 120,
-    height: 150,
-    // margin:theme.spacing(2),
+    width: 150,
+    height: 200,
   },
   img: {
     margin: 'auto',
@@ -72,102 +70,90 @@ const useStyles = makeStyles((theme) => ({
     width:'100%',
     borderRadius: "10px"
   },
-  typographyPadding: {
-    paddingTop:theme.spacing(2),
-    lineHeight:'20px',
+  aboutContainer: {
+    margin:theme.spacing(4),
   },
 }));
 
-const cards = [1, 2, 3];
+const cards = [1, 2, 3, 4, 5, 6];
 
 export function TeacherProfile () {
   const classes = useStyles();
 
   return (
       <main className={classes.mainWidth}>
-      <CssBaseline />
+        <CssBaseline />
         <div className={classes.heroContent}>
           <Container maxWidth="md">
-          <div className={classes.root}>
-            <Paper className={classes.paper}>
-              <Grid container spacing={4}>
-                <Grid item>
-                  <ButtonBase className={classes.image}>
-                    <img className={classes.img} alt="complex" src={pexels} />
-                  </ButtonBase>
-                </Grid>
-                <Grid item xs={12} sm container>
-                  <Grid item xs container direction="column" spacing={2}>
-                    <Grid item xs>
-                      <Typography gutterBottom variant="h4">
-                        Kumar Saini
-                      </Typography>
-                      <Typography variant="body2"
+            <div className={classes.root}>
+              <Paper className={classes.paper} elevation={5}>
+                <Grid container spacing={4} >
+                  <Grid item  justify="center">
+                    <ButtonBase className={classes.image}>
+                      <img className={classes.img} alt="complex" src={pexels} />
+                    </ButtonBase>
+                  </Grid>
+                  <Grid item  sm container>
+                    <Grid item xs container direction="column" spacing={2}>
+                      <Grid item xs>
+                        <Typography gutterBottom variant="h4">
+                          Kumar Saini
+                        </Typography>
+                        <Typography variant="body2"
                         color="primary"
                         gutterBottom>
-                        #1 Educator in Physics · IIT JEE
-                      </Typography>
-                      <Typography variant="body1" color="textSecondary">
-                        B.Tech- IIT Delhi, 13+ years teaching exp for IIT-JEE, senior physics faculty at Bansal class kota, Etoos, Allen and Vibrant academy Kota,
-                        #IITian | Always Basics to JEE Advanced #11+ Yrs Exp. #Search Me on Google 😃 ...
-                      </Typography>
-                      <hr/>
-                        <Grid item className={classes.typographyPadding}>
-                        <Typography variant="body2" gutterBottom>
-                          Educators Highlights
-                      </Typography>
-                        <Typography variant="body1" color="primary" gutterBottom>
-                          13+ years Experience
-                      </Typography>
-                      <Typography variant ="body1" color="primary" gutterBottom>
-                          Education: IIT Roorkee (B.Tech.)  •  2008 - 2012
-                      </Typography>
-                        <Typography variant="body1" color="primary" gutterBottom>
-                          Lives in Jaipur Rajasthan
-                      </Typography>
-                        <Typography variant="body1" color="primary" gutterBottom>
-                          Gyanacharya Educator since 29th April, 2021
-                      </Typography>
-                        <Typography variant="body1" color="primary" gutterBottom>
-                          1,209,729 live minutes taught in last 30 days
-                      </Typography>
-                        <Typography variant="body1" color="primary" gutterBottom>
-                          Knows Hindi and English
-                      </Typography>
-                        </Grid>
+                          #1 Educator in Physics · IIT JEE
+                        </Typography>
+                        <Typography variant="body1" color="textSecondary">
+                          B.Tech- IIT Delhi, 13+ years teaching exp for IIT-JEE, senior physics faculty at Bansal class kota, Etoos, Allen and Vibrant academy Kota,
+                          #IITian | Always Basics to JEE Advanced #11+ Yrs Exp. #Search Me on Google 😃 ...
+                        </Typography>
+                        {/* <hr/> */}
+                        {/* <Grid item className={classes.typographyPadding}>
+                          <Typography variant="body2" gutterBottom>
+                            Educators Highlights
+                          </Typography>
+                          <Typography variant="body1" color="primary"
+                            gutterBottom>
+                            13+ years Experience
+                          </Typography>
+                          <Typography variant ="body1" color="primary"
+                          gutterBottom>
+                            Education: IIT Roorkee (B.Tech.)  •  2008 - 2012
+                          </Typography>
+                          <Typography variant="body1" color="primary"
+                          gutterBottom>
+                            Lives in Jaipur Rajasthan
+                          </Typography>
+                          <Typography variant="body1" color="primary"
+                          gutterBottom>
+                            Gyanacharya Educator since 29th April, 2021
+                          </Typography>
+                          <Typography variant="body1" color="primary"
+                          gutterBottom>
+                            1,209,729 live minutes taught in last 30 days
+                          </Typography>
+                          <Typography variant="body1" color="primary"
+                          gutterBottom>
+                            Knows Hindi and English
+                          </Typography>
+                        </Grid> */}
+                    </Grid>
+                    <Grid item>
+                      <Typography variant="h6">
+                        65M</Typography>
                     </Grid>
                   </Grid>
-                  <Grid item>
-                    <Typography variant="subtitle1">Other Details</Typography>
+                    <Grid item>
+                      <Typography variant="subtitle1"
+                      color="primary">Other Details</Typography>
+                    </Grid>
                   </Grid>
                 </Grid>
-                </Grid>
-                <Grid container spacing={2}>
-                <Grid item>
-                  <Paper>
-                    <Typography variant="h6">
-                      helllo</Typography>
-                  </Paper>
-                </Grid>
-                </Grid>
-            </Paper>
-          </div>
+              </Paper>
+            </div>
           </Container>
         </div>
-        <Container maxWidth="md">
-        <Grid container spacing={4} justify="center">
-          <Grid item xs={12}>
-            <Typography variant="h4" align="center" color="primary" gutterBottom>
-               About Me
-              </Typography>
-          </Grid>
-            <Grid item md={10} xs={12} >
-              <Typography variant="h5" align="center" gutterBottom>
-                Hello! I’m Kumar Saini. Senior Web Developer specializing in front end development. Experienced with all stages of the development cycle for dynamic web projects. Well-versed in numerous programming languages including JavaScript, SQL, and C. Stng background in project management and customer relations.
-              </Typography>
-            </Grid>
-          </Grid>
-        </Container>
         <Container className={classes.cardGrid} maxWidth="md">
           <Grid container spacing={4}>
             <Grid item xs={12}>
@@ -240,15 +226,31 @@ export function TeacherProfile () {
           ))}
         </Grid>
       </Container>
-      <Container maxWidth="md">
+      <Container maxWidth="md" className={classes.cardGrid}>
         <Grid container spacing={4} justify="center">
-          <Grid item md={10} xs={12}>
-            <Typography variant="h4" align="center" color="primary" gutterBottom>
-              Accomplishments
+          <Grid item xs={12}>
+            <Typography variant="h4" align="center" color="primary"
+              gutterBottom>
+              About Me
               </Typography>
           </Grid>
           <Grid item md={10} xs={12} >
-            <Typography variant="h6" align="left" gutterBottom>
+            <Typography variant="h5" align="center" gutterBottom>
+              Hello! I’m Kumar Saini. Senior Web Developer specializing in front end development. Experienced with all stages of the development cycle for dynamic web projects. Well-versed in numerous programming languages including JavaScript, SQL, and C. Stng background in project management and customer relations.
+              </Typography>
+          </Grid>
+        </Grid>
+      </Container>
+      <Container maxWidth='md'>
+        <Grid container spacing={8} justify="center" className={classes.gridContainer}>
+          <Grid item md={6} xs={12} >
+            <Typography variant="h5" align="center"
+              gutterBottom>
+              Accomplishments
+              </Typography>
+            <Typography variant="body1"
+            className={classes.aboutContainer}
+            align="center"  color="textSecondary" gutterBottom>
               Latest Result: Mentor to Ashwin - 100%ile in Maths in JEE Main 2021 through my Evolve Batch. Many Students Scoring more than 99.5%ile in Maths.
               <br/>
               Top Educator in IIT-JEE on Unacademy. Mentored Thousands of IIT Aspirants all over India.
@@ -258,22 +260,15 @@ export function TeacherProfile () {
               Most Popular Courses in IIT-JEE on Unacademy. Each Course Starts from Basics - Ends at JEE Advanced
               <br/>
               </Typography>
-              <Typography variant="h6">
-              Joined Unacademy on
-              </Typography>
-              <Typography variant ="body1">
-              25 November, 2017
-              </Typography>
           </Grid>
-        </Grid>
-        <Grid container spacing={4} justify="center">
-          <Grid item md={10} xs={12}>
-            <Typography variant="h4" align="center" color="primary" gutterBottom>
+          <Grid item md={6} xs={12} >
+            <Typography variant="h5" align="center"
+              gutterBottom>
               Knows About
               </Typography>
-          </Grid>
-          <Grid item md={10} xs={12} >
-            <Typography variant="h6" align="left" gutterBottom>
+            <Typography variant="body1" align="center" 
+              className={classes.aboutContainer}
+              color="textSecondary" gutterBottom>
               Latest Result: Mentor to Ashwin - 100%ile in Maths in JEE Main 2021 through my Evolve Batch. Many Students Scoring more than 99.5%ile in Maths.
               <br />
               Top Educator in IIT-JEE on Unacademy. Mentored Thousands of IIT Aspirants all over India.
@@ -283,12 +278,6 @@ export function TeacherProfile () {
               Most Popular Courses in IIT-JEE on Unacademy. Each Course Starts from Basics - Ends at JEE Advanced
               <br />
             </Typography>
-            <Typography variant="h6">
-              Joined Unacademy on
-              </Typography>
-            <Typography variant="body1">
-              25 November, 2017
-              </Typography>
           </Grid>
         </Grid>
       </Container>
