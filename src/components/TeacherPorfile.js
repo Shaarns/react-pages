@@ -17,15 +17,18 @@ import { ButtonBase, Paper } from '@material-ui/core';
 import pexels from "./images/pexels.jpg";
 
 const useStyles = makeStyles((theme) => ({
+  mainWidth:{
+    minWidth:'400px',
+  },
   icon: {
     marginRight: theme.spacing(2),
   },
   heroContent: {
       backgroundImage: 'url(https://source.unsplash.com/random)',
-      backgroundSize:"cover",
+      backgroundSize:"100% 60%",
       backgroundRepeat:'no-repeat',
       padding: theme.spacing(15, 0, 15),
-      marginBottom:theme.spacing(10),
+      marginBottom:theme.spacing(2),
   },
   heroButtons: {
     marginTop: theme.spacing(4),
@@ -75,13 +78,13 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+const cards = [1, 2, 3];
 
 export function TeacherProfile () {
   const classes = useStyles();
 
   return (
-      <main>
+      <main className={classes.mainWidth}>
       <CssBaseline />
         <div className={classes.heroContent}>
           <Container maxWidth="md">
@@ -99,13 +102,14 @@ export function TeacherProfile () {
                       <Typography gutterBottom variant="h4">
                         Kumar Saini
                       </Typography>
-                      <Typography variant="body2" 
+                      <Typography variant="body2"
                         color="primary"
                         gutterBottom>
                         #1 Educator in Physics · IIT JEE
                       </Typography>
                       <Typography variant="body1" color="textSecondary">
                         B.Tech- IIT Delhi, 13+ years teaching exp for IIT-JEE, senior physics faculty at Bansal class kota, Etoos, Allen and Vibrant academy Kota,
+                        #IITian | Always Basics to JEE Advanced #11+ Yrs Exp. #Search Me on Google 😃 ...
                       </Typography>
                       <hr/>
                         <Grid item className={classes.typographyPadding}>
@@ -114,6 +118,9 @@ export function TeacherProfile () {
                       </Typography>
                         <Typography variant="body1" color="primary" gutterBottom>
                           13+ years Experience
+                      </Typography>
+                      <Typography variant ="body1" color="primary" gutterBottom>
+                          Education: IIT Roorkee (B.Tech.)  •  2008 - 2012
                       </Typography>
                         <Typography variant="body1" color="primary" gutterBottom>
                           Lives in Jaipur Rajasthan
@@ -131,7 +138,7 @@ export function TeacherProfile () {
                     </Grid>
                   </Grid>
                   <Grid item>
-                    <Typography variant="subtitle1">$19.00</Typography>
+                    <Typography variant="subtitle1">Other Details</Typography>
                   </Grid>
                 </Grid>
                 </Grid>
@@ -148,17 +155,26 @@ export function TeacherProfile () {
           </Container>
         </div>
         <Container maxWidth="md">
-          <Grid container spacing={4}>
-            <Grid item >
-              <Typography variant="h5" align="justify" gutterBottom>
-              Hello! I’m Robert Smith. Senior Web Developer specializing in front end development. Experienced with all stages of the development cycle for dynamic web projects. Well-versed in numerous programming languages including JavaScript, SQL, and C. Stng background in project management and customer relations.
+        <Grid container spacing={4} justify="center">
+          <Grid item xs={12}>
+            <Typography variant="h4" align="center" color="primary" gutterBottom>
+               About Me
+              </Typography>
+          </Grid>
+            <Grid item md={10} xs={12} >
+              <Typography variant="h5" align="center" gutterBottom>
+                Hello! I’m Kumar Saini. Senior Web Developer specializing in front end development. Experienced with all stages of the development cycle for dynamic web projects. Well-versed in numerous programming languages including JavaScript, SQL, and C. Stng background in project management and customer relations.
               </Typography>
             </Grid>
           </Grid>
         </Container>
         <Container className={classes.cardGrid} maxWidth="md">
-          {/* End hero unit */}
           <Grid container spacing={4}>
+            <Grid item xs={12}>
+            <Typography variant="h5">
+              IIT JEE
+            </Typography>
+            </Grid>
             {cards.map((card) => (
               <Grid item key={card} xs={12} sm={6} md={4}>
                 <Card className={classes.card}>
@@ -169,18 +185,18 @@ export function TeacherProfile () {
                   />
                   <CardContent className={classes.cardContent}>
                     <Typography gutterBottom variant="h5" component="h2">
-                      Heading
+                      Mathematics
                     </Typography>
-                    <Typography>
-                      This is a media card. You can use this section to describe the content.
+                    <Typography gutterBottom>
+                      Rank Booster Course on Integral Calculus
+                    </Typography>
+                    <Typography variant="body2">
+                      Lesson 6 • Apr 10, 2021 3:30 PM
                     </Typography>
                   </CardContent>
                   <CardActions>
-                    <Button size="small" color="primary">
-                      View
-                    </Button>
-                    <Button size="small" color="primary">
-                      Edit
+                    <Button size="small" color="textSecondary" >
+                      Kumar Saini
                     </Button>
                   </CardActions>
                 </Card>
@@ -188,6 +204,94 @@ export function TeacherProfile () {
             ))}
           </Grid>
         </Container>
+      <Container className={classes.cardGrid} maxWidth="md">
+        <Grid container spacing={4}>
+          <Grid item xs={12}>
+            <Typography variant="h5">
+              Special classes
+            </Typography>
+          </Grid>
+          {cards.map((card) => (
+            <Grid item key={card} xs={12} sm={6} md={4}>
+              <Card className={classes.card}>
+                <CardMedia
+                  className={classes.cardMedia}
+                  image="https://source.unsplash.com/random"
+                  title="Image title"
+                />
+                <CardContent className={classes.cardContent}>
+                  <Typography gutterBottom variant="h5" component="h2">
+                    Mathematics
+                    </Typography>
+                  <Typography gutterBottom>
+                    Rank Booster Course on Integral Calculus
+                    </Typography>
+                  <Typography variant="body2">
+                    Lesson 6 • Apr 10, 2021 3:30 PM
+                    </Typography>
+                </CardContent>
+                <CardActions>
+                  <Button size="small" color="textSecondary" >
+                    Kumar Saini
+                    </Button>
+                </CardActions>
+              </Card>
+            </Grid>
+          ))}
+        </Grid>
+      </Container>
+      <Container maxWidth="md">
+        <Grid container spacing={4} justify="center">
+          <Grid item md={10} xs={12}>
+            <Typography variant="h4" align="center" color="primary" gutterBottom>
+              Accomplishments
+              </Typography>
+          </Grid>
+          <Grid item md={10} xs={12} >
+            <Typography variant="h6" align="left" gutterBottom>
+              Latest Result: Mentor to Ashwin - 100%ile in Maths in JEE Main 2021 through my Evolve Batch. Many Students Scoring more than 99.5%ile in Maths.
+              <br/>
+              Top Educator in IIT-JEE on Unacademy. Mentored Thousands of IIT Aspirants all over India.
+              <br/>
+              India's Top Online Faculty (IIT-JEE) Educator of the Month - April People's Choice Award
+              <br/>
+              Most Popular Courses in IIT-JEE on Unacademy. Each Course Starts from Basics - Ends at JEE Advanced
+              <br/>
+              </Typography>
+              <Typography variant="h6">
+              Joined Unacademy on
+              </Typography>
+              <Typography variant ="body1">
+              25 November, 2017
+              </Typography>
+          </Grid>
+        </Grid>
+        <Grid container spacing={4} justify="center">
+          <Grid item md={10} xs={12}>
+            <Typography variant="h4" align="center" color="primary" gutterBottom>
+              Knows About
+              </Typography>
+          </Grid>
+          <Grid item md={10} xs={12} >
+            <Typography variant="h6" align="left" gutterBottom>
+              Latest Result: Mentor to Ashwin - 100%ile in Maths in JEE Main 2021 through my Evolve Batch. Many Students Scoring more than 99.5%ile in Maths.
+              <br />
+              Top Educator in IIT-JEE on Unacademy. Mentored Thousands of IIT Aspirants all over India.
+              <br />
+              India's Top Online Faculty (IIT-JEE) Educator of the Month - April People's Choice Award
+              <br />
+              Most Popular Courses in IIT-JEE on Unacademy. Each Course Starts from Basics - Ends at JEE Advanced
+              <br />
+            </Typography>
+            <Typography variant="h6">
+              Joined Unacademy on
+              </Typography>
+            <Typography variant="body1">
+              25 November, 2017
+              </Typography>
+          </Grid>
+        </Grid>
+      </Container>
       </main>
   );
 }

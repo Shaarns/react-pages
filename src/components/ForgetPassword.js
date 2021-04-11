@@ -29,7 +29,7 @@ const useStyles = makeStyles((theme) => ({
     buttonSend: {
         margin: theme.spacing(3, 2, 6, 0),
     },
-    buttonResend: { 
+    buttonResend: {
         margin: theme.spacing(3, 2, 6, 0),
     }
 }));
