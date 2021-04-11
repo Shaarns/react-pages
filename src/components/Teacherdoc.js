@@ -43,35 +43,35 @@ export function Teacherdoc(){
                 </Grid>
             <Grid container spacing={4}>
                 <Grid item xs={12} sm={6} >
-                    <TextField 
+                    <TextField
                         className={classes.textmargin}
                         fullWidth
                         variant="standard"
                         id="topic"
                         label = "Name"
-                    />              
+                    />
                 </Grid>
                 <Grid item xs={12} sm={6} >
-                    <TextField 
+                    <TextField
                         className={classes.textmargin}
                         fullWidth
                         variant="standard"
                         id="topic"
                         label = "Email ID"
-                    />              
+                    />
                 </Grid>
                 <Grid item xs={12} >
                     <Typography
                         className={classes.textmargin}
                         variant="button" display="block" gutterBottom>
-                            Highest qualification 
+                            Highest qualification
                             (degree, provisional certificate)
                     </Typography>
-                    <input
+                    <Input
                         accept="image/*"
                         id="contained-button-file-1"
                         multiple
-                        type="file" 
+                        type="file"
                     />
                     <label htmlFor="contained-button-file-1">
                         <Button variant="contained"  component="span">
@@ -89,14 +89,13 @@ export function Teacherdoc(){
                         accept="image/*"
                         id="contained-button-file-2"
                         multiple
-                        type="file" 
-                        
+                        type="file"
                     />
                     <label htmlFor="contained-button-file-2">
                         <Button variant="contained" component="span">
                             Upload
                         </Button>
-                    </label> 
+                    </label>
                 </Grid>
                 <Grid item xs={12} >
                     <Typography
@@ -108,7 +107,7 @@ export function Teacherdoc(){
                         accept="image/*"
                         id="contained-button-file-3"
                         multiple
-                        type="file" 
+                        type="file"
                     />
                     <label htmlFor="contained-button-file-3">
                         <Button variant="contained"  component="span">
@@ -118,14 +117,14 @@ export function Teacherdoc(){
                 </Grid>
                 <Grid item xs={12}>
                     <div className={classes.button}>
-                    <Button 
+                    <Button
                         className={classes.buttonmargin}
                         variant ="contained"
                         size="large"
                         color="primary">
                         Submit
                     </Button>
-                    <Button 
+                    <Button
                         className={classes.buttonmargin}
                         variant="outlined"
                         size="large"
@@ -138,5 +137,5 @@ export function Teacherdoc(){
             </form>
         </Container>
 
-);        
+);
 }

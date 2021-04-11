@@ -3,10 +3,15 @@ import About from "./components/About"
 import Contact from "./components/Contact";
 import { Form } from "./components/Form";
 import { Join } from "./components/Join"
-import Practise from "./components/Practise";
+import Practise from "./components/Practice";
 import { Studentdoc } from "./components/Studentdoc";
 import { Teacherdoc } from "./components/Teacherdoc";
 import Teachercarousel from "./components/Techercarousel";
+import { Forget } from "./components/Forget";
+import { Verification } from "./components/Verification";
+import { ResetPass } from "./components/ResetPass";
+import { ChangePassword } from "./components/ChangePassword";
+import { TeacherProfile } from "./components/TeacherPorfile";
 // import { BrowserRouter as Router,  Route } from 'react-router-dom';
 export class App extends React.Component {
   render() {
@@ -22,7 +27,13 @@ export class App extends React.Component {
         <div>
           {/* <Teachercarousel/> */}
           {/* <About /> */}
-          <Contact />
+          {/* <Contact /> */}
+          {/* <Practise /> */}
+          {/* <Teacherdoc/> */}
+          {/* <Verification/> */}
+          {/* <ResetPass /> */}
+          {/* <ChangePassword/> */}
+          <TeacherProfile/>
         </div>
     );
   }

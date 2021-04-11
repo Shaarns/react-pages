@@ -21,10 +21,6 @@ const useStyles = makeStyles((theme) => ({
         alignItems: 'center',
         justifyContent:'left',
     },
-    avatar: {
-        margin: theme.spacing(1),
-        backgroundColor: theme.palette.secondary.main,
-    },
     form: {
         width: '100%', 
         marginTop: theme.spacing(3),
@@ -97,22 +93,15 @@ export default function Contact() {
 
                                     />
                                 </Grid>
-                                <Grid item xs={12}>
-                                    <FormControlLabel
-                                        control={<Checkbox value="allowExtraEmails" color="primary" />}
-                                        label="I want to receive inspiration, marketing promotions and updates via email."
-                                    />
-                                </Grid>
                             </Grid>
                             <Button
                                 type="submit"
                                 fullWidth
                                 variant="contained"
                                 color="primary"
-                                className={classes.submit}
-                            >
-                                Send Message
-                    </Button>
+                                className={classes.submit}>
+                                    Send Message
+                            </Button>
                             <Grid container justify="flex-end">
 
                             </Grid>

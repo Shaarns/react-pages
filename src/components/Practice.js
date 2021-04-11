@@ -7,7 +7,7 @@ export default class Practise extends React.Component{
             <Container maxWidth="sm">
                 <Grid container >
                     <Grid item xs={12}>
-                        <Paper textAlign="center">
+                        <Paper >
                             <Typography>
                                 Practice
                     </Typography>
