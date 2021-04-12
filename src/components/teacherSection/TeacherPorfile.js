@@ -78,7 +78,7 @@ const useStyles = makeStyles((theme) => ({
 
 const cards = [1, 2, 3, 4, 5, 6];
 
-export function TeacherProfile () {
+const TeacherProfile = () => {
   const classes = useStyles();
 
   return (
@@ -265,26 +265,27 @@ export function TeacherProfile () {
           </Grid>
         </Grid>
       </Container>
-      <Container maxWidth='md'>
+      <Container >
+        <Paper className={classes.paper}>
         <Grid container spacing={8} justify="center" className={classes.gridContainer}>
-          <Grid item md={6} xs={12} >
-            <Typography variant="h5" align="center"
-              gutterBottom>
-              Accomplishments
+            <Grid item md={6} xs={12} >
+              <Typography variant="h5" align="center"
+                gutterBottom>
+                Accomplishments
               </Typography>
-            <Typography variant="body1"
-            className={classes.aboutContainer}
-            align="center"  color="textSecondary" gutterBottom>
-              Latest Result: Mentor to Ashwin - 100%ile in Maths in JEE Main 2021 through my Evolve Batch. Many Students Scoring more than 99.5%ile in Maths.
-              <br/>
+              <Typography variant="body1"
+                className={classes.aboutContainer}
+                align="center" color="textSecondary" gutterBottom>
+                Latest Result: Mentor to Ashwin - 100%ile in Maths in JEE Main 2021 through my Evolve Batch. Many Students Scoring more than 99.5%ile in Maths.
+              <br />
               Top Educator in IIT-JEE on Unacademy. Mentored Thousands of IIT Aspirants all over India.
-              <br/>
+              <br />
               India's Top Online Faculty (IIT-JEE) Educator of the Month - April People's Choice Award
-              <br/>
+              <br />
               Most Popular Courses in IIT-JEE on Unacademy. Each Course Starts from Basics - Ends at JEE Advanced
-              <br/>
+              <br />
               </Typography>
-          </Grid>
+            </Grid>
           <Grid item md={6} xs={12} >
             <Typography variant="h5" align="center"
               gutterBottom>
@@ -304,7 +305,9 @@ export function TeacherProfile () {
             </Typography>
           </Grid>
         </Grid>
+        </Paper>
       </Container>
       </main>
   );
-}
+};
+export default TeacherProfile;
