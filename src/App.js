@@ -1,5 +1,5 @@
 import React from "react";
-import { TeacherProfile } from "./components/TeacherPorfile";
+import { TeacherProfile } from "./components/teacherSection/TeacherPorfile";
 // import { BrowserRouter as Router,  Route } from 'react-router-dom';
 export class App extends React.Component {
   render() {

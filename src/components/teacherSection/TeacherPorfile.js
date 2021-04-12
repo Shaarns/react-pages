@@ -1,21 +1,22 @@
 import React from 'react';
-import AppBar from '@material-ui/core/AppBar';
 import Button from '@material-ui/core/Button';
-import CameraIcon from '@material-ui/icons/PhotoCamera';
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Grid from '@material-ui/core/Grid';
-import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
-import Link from '@material-ui/core/Link';
 import { ButtonBase, Paper } from '@material-ui/core';
-import pexels from "./images/pexels.jpg";
-
+import pexels from "../images/pexels.jpg";
+import CheckCircleIcon from '@material-ui/icons/CheckCircle';
+import LocationOnIcon from '@material-ui/icons/LocationOn';
+import CastForEducationIcon from '@material-ui/icons/CastForEducation';
+import LiveTvIcon from '@material-ui/icons/LiveTv';
+import LanguageIcon from '@material-ui/icons/Language';
+import UpdateIcon from '@material-ui/icons/Update';
 const useStyles = makeStyles((theme) => ({
   mainWidth:{
     minWidth:'400px',
@@ -31,7 +32,7 @@ const useStyles = makeStyles((theme) => ({
       marginBottom:theme.spacing(0),
   },
   heroButtons: {
-    marginTop: theme.spacing(4),
+    marginTop: theme.spacing(2),
   },
   cardGrid: {
     paddingTop: theme.spacing(8),
@@ -61,7 +62,7 @@ const useStyles = makeStyles((theme) => ({
   },
   image: {
     width: 150,
-    height: 200,
+    height: 190,
   },
   img: {
     margin: 'auto',
@@ -97,56 +98,77 @@ export function TeacherProfile () {
                     <Grid item xs container direction="column" spacing={2}>
                       <Grid item xs>
                         <Typography gutterBottom variant="h4">
-                          Kumar Saini
+                          Kumar Saini <CheckCircleIcon color="primary"/>
                         </Typography>
                         <Typography variant="body2"
                         color="primary"
                         gutterBottom>
                           #1 Educator in Physics · IIT JEE
                         </Typography>
-                        <Typography variant="body1" color="textSecondary">
+                        <Typography variant="body1" color="textSecondary" gutterBottom>
                           B.Tech- IIT Delhi, 13+ years teaching exp for IIT-JEE, senior physics faculty at Bansal class kota, Etoos, Allen and Vibrant academy Kota,
-                          #IITian | Always Basics to JEE Advanced #11+ Yrs Exp. #Search Me on Google 😃 ...
+                          #IITian |
+                          B.Tech- IIT Delhi, 13+ years teaching exp for IIT-JEE, senior physics faculty at Bansal class kota, Etoos, Allen and Vibrant academy Kota,
                         </Typography>
-                        {/* <hr/> */}
-                        {/* <Grid item className={classes.typographyPadding}>
+                        <hr/>
+                        <Grid item container spacing={2} direction="column"
+                          className={classes.heroButtons}>
+                          <Grid item xs={12}>
                           <Typography variant="body2" gutterBottom>
                             Educators Highlights
                           </Typography>
-                          <Typography variant="body1" color="primary"
+                          </Grid>
+                          <Typography variant="body2"
                             gutterBottom>
-                            13+ years Experience
+                          <CheckCircleIcon fontSize="small"
+                          /> 13+ years Experience
                           </Typography>
-                          <Typography variant ="body1" color="primary"
+                          <Typography variant ="body2"
                           gutterBottom>
-                            Education: IIT Roorkee (B.Tech.)  •  2008 - 2012
+                          <CastForEducationIcon fontSize="small"
+                          /> Education: IIT Roorkee (B.Tech.)  •  2008 - 2012
                           </Typography>
-                          <Typography variant="body1" color="primary"
+                          <Typography variant="body2"
                           gutterBottom>
-                            Lives in Jaipur Rajasthan
+                          <LocationOnIcon fontSize="small"
+                           /> Lives in Jaipur Rajasthan
                           </Typography>
-                          <Typography variant="body1" color="primary"
+                          <Typography variant="body2"
                           gutterBottom>
-                            Gyanacharya Educator since 29th April, 2021
+                          <UpdateIcon fontSize="small"/> Gyanacharya Educator since 29th April, 2021
                           </Typography>
-                          <Typography variant="body1" color="primary"
+                          <Typography variant="body2"
                           gutterBottom>
-                            1,209,729 live minutes taught in last 30 days
+                          <LiveTvIcon fontSize="small" /> 1,209,729 live minutes taught in last 30 days
                           </Typography>
-                          <Typography variant="body1" color="primary"
-                          gutterBottom>
-                            Knows Hindi and English
+                          <Typography variant="body2">
+                          < LanguageIcon fontSize="small"/> Knows Hindi and English
                           </Typography>
-                        </Grid> */}
+                        </Grid>
+                      </Grid>
+                      <Grid container spacing={6} className={classes.heroButtons}>
+                      <Grid item>
+                        <Typography variant="subtitle2">
+                          65M Watch mins</Typography>
+                      </Grid>
+                      <Grid item>
+                        <Typography variant="subtitle2">
+                          5k Followers </Typography>
+                      </Grid>
+                      <Grid item>
+                        <Typography variant="subtitle2">
+                          65M Watchtime</Typography>
+                      </Grid>
+                      <Grid item>
+                        <Typography variant="subtitle2">
+                          65M Watchtime</Typography>
+                      </Grid>
+                      </Grid>
                     </Grid>
-                    <Grid item>
-                      <Typography variant="h6">
-                        65M</Typography>
-                    </Grid>
-                  </Grid>
-                    <Grid item>
-                      <Typography variant="subtitle1"
-                      color="primary">Other Details</Typography>
+                    <Grid item >
+                      <Button variant="contained"
+                       disableElevation
+                      color="primary">Follow</Button>
                     </Grid>
                   </Grid>
                 </Grid>
@@ -154,11 +176,12 @@ export function TeacherProfile () {
             </div>
           </Container>
         </div>
-        <Container className={classes.cardGrid} maxWidth="md">
+        <Container className={classes.cardGrid} >
+          <Paper variant="outlined" className={classes.paper}>
           <Grid container spacing={4}>
             <Grid item xs={12}>
-            <Typography variant="h5">
-              IIT JEE
+              <Typography variant="h5">
+                IIT JEE
             </Typography>
             </Grid>
             {cards.map((card) => (
@@ -189,6 +212,7 @@ export function TeacherProfile () {
               </Grid>
             ))}
           </Grid>
+          </Paper>
         </Container>
       <Container className={classes.cardGrid} maxWidth="md">
         <Grid container spacing={4}>
@@ -234,7 +258,7 @@ export function TeacherProfile () {
               About Me
               </Typography>
           </Grid>
-          <Grid item md={10} xs={12} >
+          <Grid item md={12} xs={12} >
             <Typography variant="h5" align="center" gutterBottom>
               Hello! I’m Kumar Saini. Senior Web Developer specializing in front end development. Experienced with all stages of the development cycle for dynamic web projects. Well-versed in numerous programming languages including JavaScript, SQL, and C. Stng background in project management and customer relations.
               </Typography>
@@ -266,7 +290,7 @@ export function TeacherProfile () {
               gutterBottom>
               Knows About
               </Typography>
-            <Typography variant="body1" align="center" 
+            <Typography variant="body1" align="center"
               className={classes.aboutContainer}
               color="textSecondary" gutterBottom>
               Latest Result: Mentor to Ashwin - 100%ile in Maths in JEE Main 2021 through my Evolve Batch. Many Students Scoring more than 99.5%ile in Maths.
