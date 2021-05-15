@@ -261,6 +261,6 @@ const ZoomForm = () => {
                 </Grid>
             </form>
         </Container>
-    );    
+    );
 }
 export default ZoomForm;

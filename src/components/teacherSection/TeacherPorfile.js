@@ -57,6 +57,12 @@ const useStyles = makeStyles((theme) => ({
     margin: 'auto',
     borderRadius:'10px',
   },
+  teacherProfile:{
+    flexDirection:'row-reverse',
+    [theme.breakpoints.down('xs')]:{
+      flexDirection:'row',
+    },
+  },
   subpaper: {
     padding:theme.spacing(2),
   },
@@ -66,8 +72,8 @@ const useStyles = makeStyles((theme) => ({
   },
   img: {
     margin: 'auto',
-    display: 'block',
     height:'100%',
+    display:'block',
     width:'100%',
     borderRadius: "10px"
   },
@@ -76,7 +82,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const cards = [1, 2, 3, 4, 5, 6];
+const cards = [1, 2, 3, 4];
 
 const TeacherProfile = () => {
   const classes = useStyles();
@@ -88,8 +94,10 @@ const TeacherProfile = () => {
           <Container maxWidth="md">
             <div className={classes.root}>
               <Paper className={classes.paper} elevation={5}>
-                <Grid container spacing={4} >
-                  <Grid item  justify="center">
+                <Grid container spacing={4} 
+                className={classes.teacherProfile}
+                >
+                  <Grid item>
                     <ButtonBase className={classes.image}>
                       <img className={classes.img} alt="complex" src={pexels} />
                     </ButtonBase>
@@ -165,11 +173,6 @@ const TeacherProfile = () => {
                       </Grid>
                       </Grid>
                     </Grid>
-                    <Grid item >
-                      <Button variant="contained"
-                       disableElevation
-                      color="primary">Follow</Button>
-                    </Grid>
                   </Grid>
                 </Grid>
               </Paper>
@@ -177,15 +180,14 @@ const TeacherProfile = () => {
           </Container>
         </div>
         <Container className={classes.cardGrid} >
-          <Paper variant="outlined" className={classes.paper}>
           <Grid container spacing={4}>
             <Grid item xs={12}>
               <Typography variant="h5">
-                IIT JEE
+                Lectures
             </Typography>
             </Grid>
             {cards.map((card) => (
-              <Grid item key={card} xs={12} sm={6} md={4}>
+              <Grid item key={card} xs={12} sm={6} md={3}>
                 <Card className={classes.card}>
                   <CardMedia
                     className={classes.cardMedia}
@@ -212,9 +214,8 @@ const TeacherProfile = () => {
               </Grid>
             ))}
           </Grid>
-          </Paper>
         </Container>
-      <Container className={classes.cardGrid} maxWidth="md">
+      <Container className={classes.cardGrid} >
         <Grid container spacing={4}>
           <Grid item xs={12}>
             <Typography variant="h5">
@@ -222,7 +223,7 @@ const TeacherProfile = () => {
             </Typography>
           </Grid>
           {cards.map((card) => (
-            <Grid item key={card} xs={12} sm={6} md={4}>
+            <Grid item key={card} xs={12} sm={6} md={3}>
               <Card className={classes.card}>
                 <CardMedia
                   className={classes.cardMedia}
@@ -251,19 +252,21 @@ const TeacherProfile = () => {
         </Grid>
       </Container>
       <Container maxWidth="md" className={classes.cardGrid}>
-        <Grid container spacing={4} justify="center">
-          <Grid item xs={12}>
-            <Typography variant="h4" align="center" color="primary"
-              gutterBottom>
-              About Me
+        <Paper className={classes.paper}>
+          <Grid container spacing={4} justify="center">
+            <Grid item xs={12}>
+              <Typography variant="h4" align="center" color="primary"
+                gutterBottom>
+                About Me
               </Typography>
-          </Grid>
-          <Grid item md={12} xs={12} >
-            <Typography variant="h5" align="center" gutterBottom>
-              Hello! I’m Kumar Saini. Senior Web Developer specializing in front end development. Experienced with all stages of the development cycle for dynamic web projects. Well-versed in numerous programming languages including JavaScript, SQL, and C. Stng background in project management and customer relations.
+            </Grid>
+            <Grid item md={12} xs={12} >
+              <Typography variant="h5" align="center" gutterBottom>
+                Hello! I’m Kumar Saini. Senior Web Developer specializing in front end development. Experienced with all stages of the development cycle for dynamic web projects. Well-versed in numerous programming languages including JavaScript, SQL, and C. Stng background in project management and customer relations.
               </Typography>
+            </Grid>
           </Grid>
-        </Grid>
+        </Paper>
       </Container>
       <Container >
         <Paper className={classes.paper}>

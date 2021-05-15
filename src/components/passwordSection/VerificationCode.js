@@ -45,10 +45,10 @@ const VerificationCode = () => {
                 <Grid item xs={12}>
                     <Typography
                         className={classes.heading}
-                        variant="h4" 
+                        variant="h4"
                         color="primary">
                         Check your email
-                    </Typography>   
+                    </Typography>
                 </Grid>
                 <Grid item xs={12}>
                     <Typography
