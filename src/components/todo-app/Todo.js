@@ -1,49 +1,52 @@
-import React, { useState } from 'react'
 import { Container, Typography } from '@material-ui/core'
-import TodoList from './TodoList';
+import React, { useState } from 'react'
 import TodoForm from './TodoForm'
-
-const style={
-  cursor: 'default',
-  textTransform: 'uppercase',
-}
+import TodoList from './TodoList'
+import './style.css'
 
 const Todo = () => {
-  const [todoItems, setTodoItems] = useState([
-    {
-      title: '',
-      completed: true
-    },
-  ]);
+  const [todo, setTodo] = useState([ { title: '', complete: null } ])
 
-  const todo = (title) => {
-    const newTodoItems = [{ title, complete: false }, ...todoItems, ];
-    setTodoItems(newTodoItems);
+  const addTodo = (title) => {
+    const newTodo = [{ title, complete: false }, ...todo]
+    setTodo(newTodo);
+    console.log(newTodo);
   }
-
-  const toggleComplete = index => {
-    const newTodoItems = [...todoItems];
-    newTodoItems[index].complete = !(newTodoItems[index].complete);
-    setTodoItems(newTodoItems);
+  const toggleComplete = (i) => {
+    const newTodoList = [...todo];
+    newTodoList[i].complete = true;
+    setTodo(newTodoList);
+    console.log(todo[i]);
+  }
+  const deleteTodo = (i) => {
+    const deletedTodo = [...todo];
+    deletedTodo.splice(i, 1);
+    console.log(deletedTodo);
+    setTodo(deletedTodo);
   }
 
   return (
-    <section>
-      <TodoForm todo={todo}/>
-      <Container maxWidth="sm">
-        {todoItems.map((todoItem, i) => (
-          <Typography variant="h6" color="textSecondary" style={style} >
+    <div>
+      <Container maxWidth="sm" align="center" >
+        <Typography variant="h4">
+          Todo App
+        </Typography>
+        <TodoForm todo={addTodo} />
+        {todo.map((items, i) => (
+          <div>
             <TodoList
               key={i}
               index={i}
-              todoItem={todoItem}
-              toggleComplete = {toggleComplete}
+              items={items}
+              value={items.title}
+              toggle={toggleComplete}
+              handleDelete={deleteTodo}
             />
-            </Typography>
+          </div>
         ))}
       </Container>
-    </section>
+    </div>
   )
 }
 
-export default Todo;
+export default Todo

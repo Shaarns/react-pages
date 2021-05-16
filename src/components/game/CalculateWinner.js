@@ -17,7 +17,12 @@ const CalculateWinner = (sq) => {
     if (sq[a] && sq[a] === sq[b] && sq[a] === sq[c])
       return `Winner Is ${sq[a]}`;
   }
-  return;
+  for (let j = 0; j <= list.length; j++) {
+    if (sq[j] === null){
+      return null;
+    }
+  }
+  return "Match Draw";
 }
 
 export default CalculateWinner
