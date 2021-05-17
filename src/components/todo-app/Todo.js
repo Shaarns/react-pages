@@ -27,7 +27,7 @@ const Todo = () => {
 
   return (
     <div>
-      <Container maxWidth="sm" align="center" >
+      <Container maxWidth="sm">
         <Typography variant="h4">
           Todo App
         </Typography>
@@ -38,6 +38,7 @@ const Todo = () => {
               key={i}
               index={i}
               items={items}
+              todo={todo}
               value={items.title}
               toggle={toggleComplete}
               handleDelete={deleteTodo}

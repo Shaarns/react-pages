@@ -1,17 +1,14 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Grid from '@material-ui/core/grid';
 import {
   Container,
   Typography,
-  Paper,
   Button,
   IconButton,
   InputAdornment,
   Input,
   InputLabel,
   FormControl,
-  Checkbox,
-  FormControlLabel,
   TextField,
   Link
 } from '@material-ui/core';
