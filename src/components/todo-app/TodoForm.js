@@ -27,10 +27,11 @@ const TodoForm = (props) => {
           name="todo"
           label="Enter Todo item"
           size="small"
-          // fullWidth
+          fullWidth
           value={text}
           onChange={handleChange}
         />
+        <br />
         <button
           className="buttonPrimary"
           type="submit"

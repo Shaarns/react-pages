@@ -1,5 +1,5 @@
-import { Container, Typography } from '@material-ui/core'
 import React, { useState } from 'react'
+import { Container, Grid, Typography } from '@material-ui/core'
 import TodoForm from './TodoForm'
 import TodoList from './TodoList'
 import './style.css'
@@ -58,37 +58,59 @@ const Todo = () => {
   else if (showTodo === 'complete') {
     todos = todo.filter(todo => !todo.complete);
   }
+
   const updateShowTodo = (status) => {
     setShowTodo(status);
   }
 
   return (
     <div>
-      <Container maxWidth="md" className="container">
-        <Typography variant="h4" align="center" gutterBottom>
-          Todo App
-        </Typography>
-        <TodoForm
-          todo={addTodo}
-          deleteAll={handleDeleteAllList}
-          deleteCompleted={handleDeletedCompleted}
-        />
-        <hr className="hrLine" />
-        <div align="center" className="margin">
-          Tasks left {todo.filter(todo => !todo.complete).length}
-        </div>
-        {todos.map(items => (
-          <TodoList
-            key={items.id}
-            items={items}
-            value={items.text}
-            toggle={toggleComplete}
-            handleDelete={deleteTodo}
-          />
-        ))}
-        <button onClick={() => updateShowTodo('all')} >All</button>
-        <button onClick={() => updateShowTodo('complete')} >Show Active</button>
-        <button onClick={() => updateShowTodo('active')} >Show Completed</button>
+      <Container maxWidth="false">
+        <Grid container spacing={4}>
+          <Grid item sm={5} xs={12}>
+            <Typography variant="h4" align="center" gutterBottom>
+              Todo App
+            </Typography>
+            <TodoForm
+              todo={addTodo}
+              deleteAll={handleDeleteAllList}
+              deleteCompleted={handleDeletedCompleted}
+            />
+            <hr className="hrLine" />
+            <button
+              className="buttonTertiary"
+              onClick={() => updateShowTodo('all')}
+            >
+              All
+            </button>
+            <button
+              className="buttonTertiary"
+              onClick={() => updateShowTodo('complete')}
+            >
+              Show Active
+            </button>
+            <button
+              className="buttonTertiary"
+              onClick={() => updateShowTodo('active')}
+            >
+              Show Completed
+            </button>
+          </Grid>
+          <Grid item sm={7} xs={12}>
+            <Typography align="center" className="margin" variant="h5">
+              Tasks left {todo.filter(todo => !todo.complete).length}
+            </Typography>
+            {todos.map(items => (
+              <TodoList
+                key={items.id}
+                items={items}
+                value={items.text}
+                toggle={toggleComplete}
+                handleDelete={deleteTodo}
+              />
+            ))}
+          </Grid>
+        </Grid>
       </Container>
     </div>
   )
