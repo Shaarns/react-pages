@@ -1,5 +1,3 @@
-import React from 'react'
-
 const CalculateWinner = (sq) => {
   const list = [
     [0, 1, 2],

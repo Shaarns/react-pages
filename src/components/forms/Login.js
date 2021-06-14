@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import Grid from '@material-ui/core/grid';
 import { Container, Typography, Button, IconButton, InputAdornment, Input, InputLabel, FormControl } from '@material-ui/core';
-import { Checkbox } from '@material-ui/core';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
+// import { Checkbox } from '@material-ui/core';
+// import FormControlLabel from '@material-ui/core/FormControlLabel';
 import TextField from '@material-ui/core/TextField';
 import Link from '@material-ui/core/Link';
 import { makeStyles } from '@material-ui/core';

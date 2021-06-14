@@ -52,7 +52,7 @@ export default class ImageSlider extends React.Component{
             onClick={this.handlePrevious}
           >
             Previous Image
-        </Button>
+          </Button>
           <Button
             variant="outlined"
             color="primary"
@@ -60,7 +60,7 @@ export default class ImageSlider extends React.Component{
             onClick={this.handleNext}
           >
             Next Image
-        </Button>
+          </Button>
         </Container>
       </Container>
     );
