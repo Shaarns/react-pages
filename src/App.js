@@ -25,6 +25,8 @@ import UseRefBasic from './components/forms/useRefBasic'
 import Reducers from './components/reducers/Reducers'
 import Home from './components/Social-App/Home'
 import Calculator from './components/calculator/Calculator'
+import Links from './components/Links'
+import ErrorPage from './components/home/ErrorPage'
 
 class App extends React.Component {
   state = {
@@ -43,10 +45,16 @@ class App extends React.Component {
       <ThemeProvider theme={theme}>
         <Router>
           <Route exact path='/'>
+            <Links />
+          </Route>
+          <Route path='/carpool-homepage'>
             <HomeView />
           </Route>
-          <Route exact path='/social-app'>
+          <Route path='/social-app'>
             <Home />
+          </Route>
+          <Route exact>
+            <ErrorPage />
           </Route>
           <Route path='/game'>
             <Game />
@@ -87,7 +95,7 @@ class App extends React.Component {
           <Route path='/about'>
             <About />
           </Route>
-          <Route path='/classporfile'>
+          <Route path='/classprofile'>
             <ClassProfile />
           </Route>
           <Route path='/teacherprofile'>

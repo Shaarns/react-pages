@@ -14,12 +14,12 @@
 
 }
 
-.grid-container{
+.calculator-grid-container{
   display: grid;
   grid-template-columns: auto auto auto auto;
 }
 
-.grid-items{
+.calculator-grid-items{
   color: black;
   padding: 20px;
   font-family: Sans-serif;

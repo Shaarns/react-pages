@@ -6,7 +6,7 @@ const Button = (props) => {
     <section>
       <input
         onClick={props.onClick}
-        className='grid-items'
+        className='calculator-grid-items'
         type='button'
         value={props.value}
       />
