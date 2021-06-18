@@ -23,3 +23,30 @@ body {
 .active {
   border-bottom: 2px solid black;
 }
+
+.link-page{
+  display: grid;
+  grid-template-columns:auto auto;
+
+}
+.link-page a{
+  width: 600px;
+  margin: 10px auto;
+  text-decoration: none;
+  font-size: 1.5rem;
+  border: 1px dotted black;
+  padding: 20px;
+  transition: all linear 0.2s;
+  color: black;
+}
+
+.link-page a:hover{
+  transform: scale(1.02, 1.02);
+}
+.link-page a:active{
+  transform: scale(0.91, 0.91);
+}
+
+.error-page{
+   
+}

@@ -34,14 +34,6 @@ const Calculator = () => {
         setDisplay(display.slice(0, display.length - 1))
         break
 
-      case '+/-':
-        // if (display.search('+'))
-        setDisplay(display.replace('+', '-'))
-        // else if (display.search('-') === '-') {
-        //   setDisplay(display.replace('-', '+'))
-        // }
-        break
-
       default: {
         break
       }
@@ -51,10 +43,10 @@ const Calculator = () => {
   return (
     <div className='calculator-container'>
       <DisplayValue value={display} />
-      <section className='grid-container'>
+      <section className='calculator-grid-container'>
+        <div />
         <Button onClick={handleClick} value='AC' />
         <Button onClick={handleClick} value={'del'} />
-        <Button onClick={handleClick} value={'+/-'} />
         <Button onClick={handleClick} value={'/'} />
         <Button onClick={handleClick} value={'9'} />
         <Button onClick={handleClick} value={'8'} />
