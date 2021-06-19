@@ -67,7 +67,12 @@ const Todo = () => {
       <Container>
         <Grid container justify='space-around'>
           <Grid item sm={5} xs={12}>
-            <Typography variant='h4' align='center' gutterBottom>
+            <Typography
+              color='secondary'
+              variant='h4'
+              align='center'
+              gutterBottom
+            >
               Todo App
             </Typography>
             <TodoForm
@@ -109,7 +114,12 @@ const Todo = () => {
             </div>
           </Grid>
           <Grid item sm={5} xs={12}>
-            <Typography align='center' className='taskLeft' variant='h5'>
+            <Typography
+              align='center'
+              className='taskLeft'
+              variant='h5'
+              color='secondary'
+            >
               Tasks left {todo.filter((todo) => !todo.complete).length}
             </Typography>
             {unCompletedTasks.map((items) => (

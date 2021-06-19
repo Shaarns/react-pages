@@ -25,8 +25,8 @@ const TodoForm = (props) => {
           variant='outlined'
           type='text'
           name='todo'
-          label='Enter Todo item'
           size='small'
+          placeholder='Enter Todo Items'
           fullWidth
           value={text}
           onChange={handleChange}

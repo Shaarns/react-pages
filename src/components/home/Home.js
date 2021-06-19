@@ -3,7 +3,7 @@ import { Typography } from '@material-ui/core'
 import { Grid } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core'
 import CarBookingForm from '../forms/Car_booking_Form'
-import OfferRide from '../forms/OfferRide'
+// import OfferRide from '../forms/OfferRide'
 import './home.css'
 
 const useStyles = makeStyles((theme) => ({

@@ -1,18 +1,18 @@
-import { createMuiTheme } from '@material-ui/core/styles';
+import { createMuiTheme } from '@material-ui/core/styles'
 
 const theme = createMuiTheme({
   palette: {
     primary: {
-      main: "#000"
+      main: '#000',
     },
     secondary: {
-      main: "#0f0"
+      main: '#fff',
     },
   },
   typography: {
-    fontFamily: "Segoe UI",
+    fontFamily: 'Segoe UI',
     body2: {
-      fontSize: "1.2rem",
+      fontSize: '1.2rem',
     },
     h4: {
       fontWeight: 500,
@@ -25,38 +25,38 @@ const theme = createMuiTheme({
     borderRadius: 0,
   },
   overrides: {
-    MuiCardContent:{
-      root:{
-        background: "transparent",
+    MuiCardContent: {
+      root: {
+        background: 'transparent',
       },
     },
     MuiCard: {
       root: {
-        boxShadow: "none",
-        border: " none",
+        boxShadow: 'none',
+        border: ' none',
       },
     },
     MuiButton: {
       root: {
-        textTransform: "none",
-        margin: "0px 10px 0 0",
-        padding: "8px 5px 8px 5px",
-        fontSize: "14px",
+        textTransform: 'none',
+        margin: '0px 10px 0 0',
+        padding: '8px 5px 8px 5px',
+        fontSize: '14px',
       },
     },
-    MuiAppBar:{
+    MuiAppBar: {
       root: {
-        boxShadow: "none",
+        boxShadow: 'none',
         // height: '0px',
       },
     },
-    MuiLink:{
+    MuiLink: {
       root: {
-        fontFamily: "Segoe UI",
-        fontSize: "16px",
+        fontFamily: 'Segoe UI',
+        fontSize: '16px',
         fontWeight: 600,
       },
     },
   },
-});
-export default theme;
+})
+export default theme

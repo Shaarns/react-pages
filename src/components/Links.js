@@ -11,6 +11,11 @@ import {
 import { makeStyles } from '@material-ui/core'
 
 const useStyles = makeStyles((theme) => ({
+  linkPageContainer: {
+    backgroundImage: 'url("../images/link_page_home_image.jpg")',
+    backgroundSize: 'cover',
+    backgroundPosition: 'bottom',
+  },
   media: {
     width: 400,
     height: 180,
@@ -24,26 +29,26 @@ const Links = () => {
     {
       title: 'Tic Tac Toe',
       description: 'Enter to Visit',
-      image: '../images/game.png',
+      images: '../images/game.jpg',
       link: './game',
     },
     {
       title: 'Todo App',
       description: 'Enter to Visit',
-      image: '../images/todoImage.png',
+      images: '../images/todoImage.png',
       link: './todo',
     },
     {
       title: 'Calculator',
       description: 'Enter to Visit',
-      image: '../images/calculator.png',
+      images: '../images/calculator.png',
       link: './calculator',
     },
   ]
 
   return (
-    <Container maxWidth='lg'>
-      <Typography variant='h4' color='primary' gutterBottom>
+    <Container maxWidth='lg' className={classes.linkPageContainer}>
+      <Typography variant='h4' color='secondary' gutterBottom>
         Projects
       </Typography>
       <Grid container spacing={4} className='cardContainer'>
@@ -53,7 +58,7 @@ const Links = () => {
               <CardActionArea href={items.link}>
                 <CardMedia
                   className={classes.media}
-                  image={items.image}
+                  image={items.images}
                   title={items.title}
                 />
                 <CardContent>
