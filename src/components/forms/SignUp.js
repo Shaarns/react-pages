@@ -1,14 +1,14 @@
-import React, { useState } from 'react';
-import Grid from '@material-ui/core/grid';
+import React, { useState } from 'react'
 import {
+  Grid,
   Container,
   Typography,
   Button,
   TextField,
-  Link
-} from '@material-ui/core';
-import { makeStyles } from '@material-ui/core';
-import ArrowBackIcon from '@material-ui/icons/ArrowBack';
+  Link,
+} from '@material-ui/core'
+import { makeStyles } from '@material-ui/core'
+import ArrowBackIcon from '@material-ui/icons/ArrowBack'
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   backButton: {
-    position: "relative",
+    position: 'relative',
     top: 40,
   },
   form: {
@@ -30,62 +30,58 @@ const useStyles = makeStyles((theme) => ({
   },
   button: {
     margin: theme.spacing(2, 0),
-    width: "100px",
+    width: '100px',
   },
-}));
+}))
 
 export default function SignUp() {
-  const classes = useStyles();
+  const classes = useStyles()
   const [values, setValues] = useState({
     email: '',
     password: '',
     showPassword: false,
-  });
+  })
 
   const handleChange = (prop) => (event) => {
-    setValues({ ...values, [prop]: event.target.value });
-  };
+    setValues({ ...values, [prop]: event.target.value })
+  }
 
   const handleSubmit = (event) => {
-    alert("email " + values.email + " pass " + values.password);
-    event.preventDefault();
+    alert('email ' + values.email + ' pass ' + values.password)
+    event.preventDefault()
   }
 
   return (
     <div>
-      <Container maxWidth="sm">
+      <Container maxWidth='sm'>
         <Grid container className={classes.paper} spacing={1}>
           <Grid item xs={12}>
-            <Link href="/" className={classes.backButton}>
+            <Link href='/' className={classes.backButton}>
               <ArrowBackIcon />
             </Link>
-            <Typography
-              align="center"
-              color="textPrimary"
-              variant="h4"
-            >
+            <Typography align='center' color='textPrimary' variant='h4'>
               Carpool
-              </Typography>
+            </Typography>
           </Grid>
           <Grid item xs={12} className={classes.form}>
-            <form onSubmit={handleSubmit} method="POST">
+            <form onSubmit={handleSubmit} method='POST'>
               <TextField
                 className={classes.textField}
-                id="email"
-                label="Mobile no. or Email"
+                id='email'
+                label='Mobile no. or Email'
                 fullWidth
                 value={values.email}
                 onChange={handleChange('email')}
                 // onChange={handleChangeEmail}
-                autoComplete="off"
+                autoComplete='off'
               />
               <Button
-                href="/enterotp"
+                href='/enterotp'
                 className={classes.button}
-                variant="contained"
-                color="primary"
-                size="large"
-                type="submit"
+                variant='contained'
+                color='primary'
+                size='large'
+                type='submit'
               >
                 Next
               </Button>
@@ -94,5 +90,5 @@ export default function SignUp() {
         </Grid>
       </Container>
     </div>
-  );
+  )
 }
