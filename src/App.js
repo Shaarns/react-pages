@@ -26,7 +26,7 @@ import Reducers from './components/reducers/Reducers'
 import Home from './components/Social-App/Home'
 import Calculator from './components/calculator/Calculator'
 import Links from './components/Links'
-import ErrorPage from './components/home/ErrorPage'
+// import ErrorPage from './components/home/ErrorPage'
 
 class App extends React.Component {
   state = {
@@ -53,9 +53,9 @@ class App extends React.Component {
           <Route path='/social-app'>
             <Home />
           </Route>
-          <Route exact>
+          {/* <Route exact>
             <ErrorPage />
-          </Route>
+          </Route> */}
           <Route path='/game'>
             <Game />
           </Route>

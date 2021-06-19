@@ -6,69 +6,68 @@ import './style.css'
 
 const Todo = () => {
   const [todo, setTodo] = useState([])
-  const [showTodo, setShowTodo] = useState('all')
+  // const [showTodo, setShowTodo] = useState('all')
 
   const addTodo = (text) => {
-    const newTodo = [{ text, complete: false, id: Date.now()}, ...todo]
-    setTodo(newTodo);
-    console.log(todo);
+    const newTodo = [{ text, complete: false, id: Date.now() }, ...todo]
+    setTodo(newTodo)
+    console.log(todo)
   }
   const toggleComplete = (id) => {
-    const completed = todo.map(todo => {
-      if(todo.id === id){
+    const completed = todo.map((todo) => {
+      if (todo.id === id) {
         return {
           ...todo,
-          complete: todo.complete = true
+          complete: (todo.complete = !todo.complete),
         }
-      }
-      else{
-        return todo;
+      } else {
+        return todo
       }
     })
-    setTodo(completed);
-    }
+    setTodo(completed)
+  }
   const deleteTodo = (i) => {
-    const deletedTodo = [...todo];
+    const deletedTodo = [...todo]
     //splice take remove 1 element at i index
-    deletedTodo.splice(i, 1);
-    console.log(deletedTodo);
-    setTodo(deletedTodo);
+    deletedTodo.splice(i, 1)
+    console.log(deletedTodo)
+    setTodo(deletedTodo)
   }
   const handleDeleteAllList = () => {
-   const deleteAll = [...todo];
-   if(deleteAll.length === 0)
-   return;
-   deleteAll.splice(0, deleteAll.length)
-   //another method to empty array
-   //  deleteAll.length = 0;
-   setTodo(deleteAll);
-   console.log(deleteAll);
+    const deleteAll = [...todo]
+    if (deleteAll.length === 0) return
+    deleteAll.splice(0, deleteAll.length)
+    //another method to empty array
+    //  deleteAll.length = 0;
+    setTodo(deleteAll)
+    console.log(deleteAll)
   }
   const handleDeletedCompleted = () => {
-    setTodo(todo.filter(todo => !todo.complete));
-  };
-
-  let todos = [];
-  if (showTodo === 'all') {
-    todos = todo;
-  }
-  else if (showTodo === 'active') {
-    todos = todo.filter(todo => todo.complete);
-  }
-  else if (showTodo === 'complete') {
-    todos = todo.filter(todo => !todo.complete);
+    setTodo(todo.filter((todo) => !todo.complete))
   }
 
-  const updateShowTodo = (status) => {
-    setShowTodo(status);
-  }
+  let completedTasks = []
+  completedTasks = todo.filter((todo) => todo.complete)
+  let unCompletedTasks = []
+  unCompletedTasks = todo.filter((todo) => !todo.complete)
+  // if (showTodo === 'all') {
+  //   todos = todo
+  // } else if (showTodo === 'active') {
+  //   todos = todo.filter((todo) => todo.complete)
+  // } else if (showTodo === 'complete') {
+  //   todos = todo.filter((todo) => !todo.complete)
+  // }
+
+  // const updateShowTodo = (status) => {
+  //   setShowTodo(status)
+  // }
 
   return (
-    <div>
-      <Container maxWidth="false">
-        <Grid container spacing={4}>
+    <div className='todoApp'>
+      <Container>
+        <Grid container justify='space-around'>
           <Grid item sm={5} xs={12}>
-            <Typography variant="h4" align="center" gutterBottom>
+            <Typography variant='h4' align='center' gutterBottom>
               Todo App
             </Typography>
             <TodoForm
@@ -76,31 +75,44 @@ const Todo = () => {
               deleteAll={handleDeleteAllList}
               deleteCompleted={handleDeletedCompleted}
             />
-            <hr className="hrLine" />
-            <button
-              className="buttonTertiary"
+            <hr className='hrLine' />
+            {/* <button
+              className='buttonTertiary'
               onClick={() => updateShowTodo('all')}
             >
               All
             </button>
             <button
-              className="buttonTertiary"
+              className='buttonTertiary'
               onClick={() => updateShowTodo('complete')}
             >
               Show Active
             </button>
             <button
-              className="buttonTertiary"
+              className='buttonTertiary'
               onClick={() => updateShowTodo('active')}
             >
               Show Completed
-            </button>
-          </Grid>
-          <Grid item sm={7} xs={12}>
-            <Typography align="center" className="margin" variant="h5">
-              Tasks left {todo.filter(todo => !todo.complete).length}
+            </button> */}
+            <Typography className='taskLeft' variant='h5'>
+              Completed {todo.filter((todo) => todo.complete).length}
             </Typography>
-            {todos.map(items => (
+            <div className='completedTasks'>
+              {completedTasks.map((items) => (
+                <TodoList
+                  value={items.text}
+                  items={items}
+                  key={items.id}
+                  toggle={toggleComplete}
+                />
+              ))}
+            </div>
+          </Grid>
+          <Grid item sm={5} xs={12}>
+            <Typography align='center' className='taskLeft' variant='h5'>
+              Tasks left {todo.filter((todo) => !todo.complete).length}
+            </Typography>
+            {unCompletedTasks.map((items) => (
               <TodoList
                 key={items.id}
                 items={items}
