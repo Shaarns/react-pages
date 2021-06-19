@@ -11,11 +11,6 @@ import {
 import { makeStyles } from '@material-ui/core'
 
 const useStyles = makeStyles((theme) => ({
-  linkPageContainer: {
-    backgroundImage: 'url("../images/link_page_home_image.jpg")',
-    backgroundSize: 'cover',
-    backgroundPosition: 'bottom',
-  },
   media: {
     width: 400,
     height: 180,
@@ -35,7 +30,7 @@ const Links = () => {
     {
       title: 'Todo App',
       description: 'Enter to Visit',
-      images: '../images/todoImage.png',
+      images: '../images/todo.png',
       link: './todo',
     },
     {
@@ -47,8 +42,8 @@ const Links = () => {
   ]
 
   return (
-    <Container maxWidth='lg' className={classes.linkPageContainer}>
-      <Typography variant='h4' color='secondary' gutterBottom>
+    <Container maxWidth='lg'>
+      <Typography align='center' variant='h4' color='primary' gutterBottom>
         Projects
       </Typography>
       <Grid container spacing={4} className='cardContainer'>

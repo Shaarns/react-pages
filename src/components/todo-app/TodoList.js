@@ -1,6 +1,7 @@
 import React from 'react'
 
 const TodoList = (props) => {
+  const buttonText = props.items.complete ? 'Uncheck' : 'Check'
   return (
     <div style={{ textDecoration: props.items.complete ? 'line-through' : '' }}>
       <div className='todoSection'>
@@ -10,7 +11,7 @@ const TodoList = (props) => {
             className='buttonPrimary'
             onClick={() => props.toggle(props.items.id)}
           >
-            Comeplete
+            {buttonText}
           </button>
           <button className='buttonSecondary' onClick={props.handleDelete}>
             delete
